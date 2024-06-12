@@ -196,6 +196,7 @@ a {
 }
 
 .close-btn {
+  color: red;
   width: 30px;
   height: 30px;
   position: absolute;
@@ -203,7 +204,7 @@ a {
   right: 0px;
   font-size: 30px;
   border-radius: 50%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   display: flex;
   align-items: center;
   justify-content: center;
