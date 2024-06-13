@@ -56,6 +56,109 @@
         <button class="btn coment">Коментар</button
         ><button class="btn wait">Простій</button>
       </div>
+      <div class="modal-bg hide"></div>
+      <div class="info-modal hide">
+        <span class="info-close">X</span>
+        <p class="info-text">
+          <span style="font-weight: 700">Завантаження:</span>
+          <br />
+          10.06 9:00,Havi Kiosk, St. Pauli Fischmarkt 5, 20359 Hamburg, DE
+          <br />
+          <a href="">карта</a>
+        </p>
+        <p class="info-text">
+          <span style="font-weight: 700">Замитнення: </span>
+          <br />
+          10.06 15:00, Rigaer Str. 54, Berlin, DE <br />
+          <a href="">карта</a>
+        </p>
+        <p class="info-text">Дорогуськ/Ягодин</p>
+        <p class="info-text">
+          <span style="font-weight: 700">Розмитнання/Розвантаження: </span>
+          <br />
+          15.06 9:00 Набережна вулиця, 7, Рівне, Рівенська обл., <br />
+          <a href="">карта</a>
+        </p>
+        <p class="info-text">
+          <span style="font-weight: 700">Вантаж: </span>
+          морозиво -18 -20С,
+          <span style="font-weight: 700"> постійний;</span>
+        </p>
+        <p class="info-text">
+          <span style="font-weight: 700">Додаткові умови:</span>
+          не придумав
+        </p>
+        <p class="info-text">
+          <span style="font-weight: 700">Логіст: </span>Віктор Петров
+        </p>
+      </div>
+
+      <div class="coment-modal hide">
+        <span class="coment-close">X</span>
+        <form class="coment-form" action="">
+          <label for="coment-text">Залиште свій коментар</label>
+          <textarea
+            class="coment-text"
+            name="coment-text"
+            id="coment-text"
+          ></textarea>
+          <input
+            class="file"
+            type="file"
+            accept="image/*,application/pdf"
+            capture="environment"
+          />
+          <button class="btn donwload">Відправити</button>
+        </form>
+      </div>
+      <div class="wait-modal hide">
+        <span class="wait-close">X</span>
+        <form class="wait-form" action="">
+          <label for="wait-text">Залиште свій коментар</label>
+          <textarea
+            class="wait-text"
+            name="wait-text"
+            id="wait-text"
+          ></textarea>
+          <button class="btn bad">Простій</button>
+        </form>
+      </div>
     </main>
+    <script>
+      const infobtn = document.querySelector('.info');
+      const waitbtn = document.querySelector('.wait');
+      const comentbtn = document.querySelector('.coment');
+      const infobtnClose = document.querySelector('.info-close');
+      const infomodal = document.querySelector('.info-modal');
+      const comentbtnClose = document.querySelector('.coment-close');
+      const comentmodal = document.querySelector('.coment-modal');
+      const waitbtnClose = document.querySelector('.wait-close');
+      const waitmodal = document.querySelector('.wait-modal');
+      const bgmodal = document.querySelector('.modal-bg');
+      infobtn.addEventListener('click', () => {
+        bgmodal.classList.toggle('hide');
+        infomodal.classList.toggle('hide');
+      });
+      infobtnClose.addEventListener('click', () => {
+        bgmodal.classList.toggle('hide');
+        infomodal.classList.toggle('hide');
+      });
+      waitbtn.addEventListener('click', () => {
+        bgmodal.classList.toggle('hide');
+        waitmodal.classList.toggle('hide');
+      });
+      waitbtnClose.addEventListener('click', () => {
+        bgmodal.classList.toggle('hide');
+        waitmodal.classList.toggle('hide');
+      });
+      comentbtn.addEventListener('click', () => {
+        bgmodal.classList.toggle('hide');
+        comentmodal.classList.toggle('hide');
+      });
+      comentbtnClose.addEventListener('click', () => {
+        bgmodal.classList.toggle('hide');
+        comentmodal.classList.toggle('hide');
+      });
+    </script>
   </body>
 </html>
