@@ -287,3 +287,19 @@ a {
 .hide {
   display: none;
 }
+.prewiew-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.preview-item {
+  width: 32%;
+  height: fit-content;
+}
+
+.preview-item a {
+  text-decoration: none;
+  color: #2d3a4c;
+  font-weight: bold;
+}

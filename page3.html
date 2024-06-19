@@ -44,12 +44,14 @@
       <div class="cargo-info">
         <p class="cargo-address">Необхідно додати документи CMR</p>
         <input
+          id="fileInput"
           class="file"
           type="file"
-          accept="image/*,application/pdf"
+          accept="image/*"
           capture="environment"
           multiple
         />
+        <div id="previewContainer" class="prewiew-container"></div>
         <!-- <a href="page3.html" class="btn crm">Додати CRM</a> -->
       </div>
       <div class="buttons">
@@ -118,7 +120,7 @@
           <input
             class="file"
             type="file"
-            accept="image/*,application/pdf"
+            accept="image/*"
             capture="environment"
           />
           <button class="btn donwload">Відправити</button>
@@ -137,6 +139,43 @@
         </form>
       </div>
     </main>
+    <script>
+      const fileInput = document.getElementById('fileInput');
+      const previewContainer = document.getElementById('previewContainer');
+      let allFiles = [];
+
+      fileInput.addEventListener('change', (event) => {
+        const files = Array.from(event.target.files);
+        allFiles = [...allFiles, ...files];
+        updatePreview();
+      });
+
+      function updatePreview() {
+        previewContainer.innerHTML = '';
+        allFiles.forEach((file, index) => {
+          const fileReader = new FileReader();
+          fileReader.onload = (e) => {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.alt = file.name;
+            img.className = 'preview-item';
+            img.dataset.index = index;
+
+            img.addEventListener('click', () => {
+              removeFile(index);
+            });
+
+            previewContainer.appendChild(img);
+          };
+          fileReader.readAsDataURL(file);
+        });
+      }
+
+      function removeFile(index) {
+        allFiles.splice(index, 1);
+        updatePreview();
+      }
+    </script>
     <script>
       const infobtn = document.querySelector('.info');
       const waitbtn = document.querySelector('.wait');
