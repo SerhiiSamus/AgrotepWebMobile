@@ -126,8 +126,7 @@ a {
   flex-wrap: wrap;
   width: 90%;
   justify-content: center;
-  row-gap: 20px;
-  column-gap: 30px;
+  gap: 20px;
   margin-top: 20px;
 }
 .btn {
@@ -147,10 +146,13 @@ a {
   width: 275px;
 }
 .coment {
+  max-width: 45%;
   background: #304ffe;
   width: 150px;
 }
+
 .wait {
+  max-width: 45%;
   background: #939393;
   width: 150px;
 }
